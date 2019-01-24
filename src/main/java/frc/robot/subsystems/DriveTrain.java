@@ -7,6 +7,7 @@
 
 package frc.robot.subsystems;
 
+import com.analog.adis16470.frc.ADIS16470_IMU;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
@@ -20,7 +21,6 @@ import frc.robot.commands.Drive;
 public class DriveTrain extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
-
   private WPI_TalonSRX talon0 = new WPI_TalonSRX(0);
   private WPI_TalonSRX talon1 = new WPI_TalonSRX(1);
   private WPI_TalonSRX talon2 = new WPI_TalonSRX(2);
@@ -40,4 +40,8 @@ public class DriveTrain extends Subsystem {
   public void stop(){
     driveThingy.stopMotor();
   }
+
+  // public double getAngle(){
+  //   return imu.getAngle();
+  // }
 }

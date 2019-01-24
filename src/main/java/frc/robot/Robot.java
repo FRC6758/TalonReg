@@ -7,6 +7,8 @@
 
 package frc.robot;
 
+import com.analog.adis16470.frc.ADIS16470_IMU;
+
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -31,7 +33,7 @@ public class Robot extends TimedRobot {
   public static DriveTrain driveTrain = new DriveTrain();
   public static Elevator elevator = new Elevator();
   public static Grabber grabber = new Grabber();
-
+	public static final ADIS16470_IMU imu = new ADIS16470_IMU();
 
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
@@ -134,5 +136,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void testPeriodic() {
+    System.out.println("A : " + imu.getAngle());
+    System.out.println("Ax : " + imu.getAngleX());
   }
 }

@@ -26,6 +26,7 @@ public class Drive extends Command {
   @Override
   protected void execute() {
     Robot.driveTrain.driveThingy.arcadeDrive(OI.stick.getY(), OI.stick.getX());
+    // System.out.println("Angle = " + Robot.driveTrain.getAngle());
   }
 
   // Make this return true when this Command no longer needs to run execute()
